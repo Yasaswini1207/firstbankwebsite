@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | First Bank</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome Icons -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,7 +19,7 @@
 
         /* Navbar Styling */
         .navbar {
-            background-color: #8f2d3a; /* Red color */
+            background-color: white;
             padding: 15px 20px;
             display: flex;
             align-items: center;
@@ -42,7 +42,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #8f2d3a;
             text-decoration: none;
             font-weight: bold;
             padding: 10px 15px;
@@ -53,16 +53,16 @@
             gap: 8px;
         }
 
-        /* Active Page */
+        /* Highlight "Contact" as active */
         .nav-links a.active {
-            background-color: white;
-            color: #8f2d3a;
+            background-color: #8f2d3a;
+            color: white;
             border-radius: 30px;
         }
 
         .nav-links a:hover {
-            background-color: white;
-            color: #8f2d3a;
+            background-color: #8f2d3a;
+            color: white;
             border-radius: 30px;
         }
 
@@ -71,42 +71,42 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
-            color: white;
+            background: none;
+            border: none;
+            color: #8f2d3a; /* 🔴 Red color */
         }
 
-        /* Responsive Menu */
-        @media screen and (max-width: 768px) {
+        @media (max-width: 768px) {
             .nav-links {
+                display: none;
                 flex-direction: column;
+                background-color: white;
                 position: absolute;
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background-color: #8f2d3a;
-                text-align: center;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-in-out;
+                padding: 15px 0;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
                 border-radius: 0 0 20px 20px;
+            }
+
+            .nav-links.show {
+                display: flex;
             }
 
             .nav-links a {
                 display: block;
                 padding: 12px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                text-align: center;
+                border-radius: 0;
+                width: 100%;
             }
 
             .menu-toggle {
                 display: block;
             }
-
-            /* Show Menu when Active */
-            .nav-links.show {
-                max-height: 500px; /* Expand to show links */
-            }
         }
 
-        /* Contact Form & Info */
         .container {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -173,7 +173,7 @@
     <div class="logo">
         <img src="logo.png" alt="Bank Logo">
     </div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
     <nav class="nav-links">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="savings_account.html"><i class="fas fa-university"></i> Accounts</a>
@@ -218,9 +218,14 @@
 
 <script>
     function toggleMenu() {
-        const nav = document.querySelector(".nav-links");
-        nav.classList.toggle("show");
+        document.querySelector('.nav-links').classList.toggle('show');
     }
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you! Your message has been sent.');
+        document.getElementById('contactForm').reset();
+    });
 </script>
 
 </body>
