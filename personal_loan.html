@@ -10,7 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('bank-bg.jpg') no-repeat center center/cover; /* Background image */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('bank-bg.jpg') no-repeat center center/cover;
             animation: fadeIn 1s ease-in-out;
         }
 
@@ -22,17 +23,22 @@
 
         /* Navbar Styling */
         .navbar {
-            background-color: white;
+            background: transparent;
             padding: 15px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-radius: 0 0 20px 20px;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 1000;
+            left: 0;
             transition: all 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .logo img {
@@ -97,9 +103,9 @@
                 left: 0;
                 width: 100%;
                 background-color: white;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-                border-radius: 0 0 20px 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                 padding: 10px 0;
+                border-radius: 0 0 20px 20px;
                 transition: max-height 0.5s ease-in-out;
                 overflow: hidden;
                 max-height: 0;
@@ -124,21 +130,20 @@
 
         .container {
             width: 80%;
-            margin: 40px auto;
+            margin: 100px auto;
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             animation: fadeIn 1s ease-in-out;
+            text-align: center;
         }
 
         h2 {
-            text-align: center;
             color: #8f2d3a;
         }
 
         p {
-            text-align: center;
             font-size: 18px;
             color: #333;
         }
@@ -190,7 +195,6 @@
             background-color: #721b29;
             transform: scale(1.05);
         }
-
     </style>
 </head>
 <body>
@@ -200,7 +204,7 @@
     <div class="logo">
         <img src="logo.png" alt="Bank Logo">
     </div>
-    <button class="hamburger" onclick="toggleMenu()">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open Menu">
         <i class="fas fa-bars"></i>
     </button>
     <nav class="nav-links">
@@ -229,16 +233,6 @@
             <h3>Up to ₹10 Lakhs</h3>
             <p>Flexible loan amounts as per your needs</p>
         </div>
-        <div class="feature-box">
-            <i class="fas fa-percent"></i>
-            <h3>Low Interest Rates</h3>
-            <p>Starting from just 10.99% p.a.</p>
-        </div>
-        <div class="feature-box">
-            <i class="fas fa-file-alt"></i>
-            <h3>Minimal Documentation</h3>
-            <p>Quick & hassle-free processing</p>
-        </div>
     </div>
 
     <a href="https://www.idfcfirstbank.com/#" target="_blank" class="button">Apply Now</a>
@@ -246,12 +240,14 @@
 
 <script>
     function toggleMenu() {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('show');
+        document.querySelector('.nav-links').classList.toggle('show');
     }
+
+    window.addEventListener("scroll", function () {
+        document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+    });
 </script>
 
 </body>
 </html>
-
 
