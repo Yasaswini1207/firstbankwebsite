@@ -66,6 +66,47 @@
             border-radius: 30px;
         }
 
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #8f2d3a;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: white;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 15px 0;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 0 0 20px 20px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px;
+                text-align: center;
+                border-radius: 0;
+                width: 100%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
         .container {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -132,6 +173,7 @@
     <div class="logo">
         <img src="logo.png" alt="Bank Logo">
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
     <nav class="nav-links">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="savings_account.html"><i class="fas fa-university"></i> Accounts</a>
@@ -175,6 +217,10 @@
 </div>
 
 <script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    }
+
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
         alert('Thank you! Your message has been sent.');
@@ -184,5 +230,4 @@
 
 </body>
 </html>
-
 
