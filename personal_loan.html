@@ -11,6 +11,13 @@
             margin: 0;
             padding: 0;
             background: url('bank-bg.jpg') no-repeat center center/cover; /* Background image */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Smooth Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* Navbar Styling */
@@ -25,6 +32,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease-in-out;
         }
 
         .logo img {
@@ -38,12 +46,18 @@
             background: none;
             border: none;
             cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
         }
 
         .nav-links {
             display: flex;
             align-items: center;
             gap: 20px;
+            transition: all 0.3s ease-in-out;
         }
 
         .nav-links a {
@@ -70,6 +84,7 @@
             background-color: #8f2d3a;
             color: white;
             border-radius: 30px;
+            transform: scale(1.05);
         }
 
         /* Responsive Navigation */
@@ -85,10 +100,13 @@
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
                 border-radius: 0 0 20px 20px;
                 padding: 10px 0;
+                transition: max-height 0.5s ease-in-out;
+                overflow: hidden;
+                max-height: 0;
             }
 
             .nav-links a {
-                padding: 10px;
+                padding: 15px;
                 text-align: center;
                 width: 100%;
                 display: block;
@@ -100,6 +118,7 @@
 
             .nav-links.show {
                 display: flex;
+                max-height: 400px; /* Smooth dropdown */
             }
         }
 
@@ -110,6 +129,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in-out;
         }
 
         h2 {
@@ -138,6 +158,12 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             width: 300px;
             text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .feature-box i {
@@ -150,17 +176,19 @@
             display: block;
             width: 200px;
             margin: 20px auto;
-            padding: 10px;
+            padding: 12px;
             background-color: #8f2d3a;
             color: white;
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: all 0.3s ease-in-out;
         }
 
         .button:hover {
             background-color: #721b29;
+            transform: scale(1.05);
         }
 
     </style>
@@ -225,4 +253,5 @@
 
 </body>
 </html>
+
 
