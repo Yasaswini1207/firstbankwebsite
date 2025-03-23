@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: url('bank-bg.jpg') no-repeat center center/cover; /* Background image */
         }
 
         /* Navbar Styling */
@@ -29,6 +29,15 @@
 
         .logo img {
             height: 50px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
 
         .nav-links {
@@ -61,6 +70,37 @@
             background-color: #8f2d3a;
             color: white;
             border-radius: 30px;
+        }
+
+        /* Responsive Navigation */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                border-radius: 0 0 20px 20px;
+                padding: 10px 0;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                text-align: center;
+                width: 100%;
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
         }
 
         .container {
@@ -132,6 +172,9 @@
     <div class="logo">
         <img src="logo.png" alt="Bank Logo">
     </div>
+    <button class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
     <nav class="nav-links">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="savings_account.html"><i class="fas fa-university"></i> Accounts</a>
@@ -173,5 +216,13 @@
     <a href="https://www.idfcfirstbank.com/#" target="_blank" class="button">Apply Now</a>
 </div>
 
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+</script>
+
 </body>
 </html>
+
