@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             background: url('bank-bg.jpg') no-repeat center center/cover;
+            animation: fadeIn 1s ease-in-out;
         }
 
         /* Navbar Styling */
@@ -25,6 +26,12 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            animation: slideDown 0.5s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .logo img {
@@ -35,6 +42,7 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            transition: 0.3s ease-in-out;
         }
 
         .nav-links a {
@@ -61,6 +69,11 @@
             font-size: 30px;
             cursor: pointer;
             color: #8f2d3a;
+            transition: 0.3s ease-in-out;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
         }
 
         @media screen and (max-width: 768px) {
@@ -74,6 +87,7 @@
                 background-color: white;
                 padding: 10px 0;
                 box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                transition: 0.5s ease-in-out;
             }
 
             .nav-links a {
@@ -109,6 +123,7 @@
         h2 {
             text-align: center;
             color: #8f2d3a;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         p {
@@ -133,11 +148,17 @@
             width: 280px;
             text-align: center;
             transition: 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .feature-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .feature-box i {
@@ -158,10 +179,12 @@
             border-radius: 5px;
             font-weight: bold;
             transition: 0.3s;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .button:hover {
             background-color: #721b29;
+            transform: scale(1.05);
         }
 
     </style>
