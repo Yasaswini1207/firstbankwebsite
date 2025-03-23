@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | First Bank</title>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,7 +19,7 @@
 
         /* Navbar Styling */
         .navbar {
-            background-color: #8f2d3a; /* Updated Red Color */
+            background-color: #8f2d3a; /* Red color */
             padding: 15px 20px;
             display: flex;
             align-items: center;
@@ -53,7 +53,7 @@
             gap: 8px;
         }
 
-        /* Highlight "Contact" as active */
+        /* Active Page */
         .nav-links a.active {
             background-color: white;
             color: #8f2d3a;
@@ -74,17 +74,19 @@
             color: white;
         }
 
+        /* Responsive Menu */
         @media screen and (max-width: 768px) {
             .nav-links {
-                display: none;
                 flex-direction: column;
-                background-color: #8f2d3a;
-                width: 100%;
                 position: absolute;
                 top: 70px;
                 left: 0;
-                padding: 10px 0;
+                width: 100%;
+                background-color: #8f2d3a;
                 text-align: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
                 border-radius: 0 0 20px 20px;
             }
 
@@ -98,11 +100,13 @@
                 display: block;
             }
 
+            /* Show Menu when Active */
             .nav-links.show {
-                display: flex;
+                max-height: 500px; /* Expand to show links */
             }
         }
 
+        /* Contact Form & Info */
         .container {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
@@ -217,8 +221,8 @@
         const nav = document.querySelector(".nav-links");
         nav.classList.toggle("show");
     }
+</script>
 
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Thank you
+</body>
+</html>
 
