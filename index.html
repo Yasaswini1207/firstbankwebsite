@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Bank - Home</title>
+    
+    <!-- Google Font (Closest to Averta) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome Icons -->
+
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif; /* Closest alternative to Averta */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 20px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #8f2d3a;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Home Button Curved */
+        .nav-links a.home-btn {
+            background-color: #8f2d3a;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+
+        .nav-links a i {
+            color: white; /* White Icons */
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            background-color: #8f2d3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .hero {
+            background: url('bank-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: #8f2d3a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Bank Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="index.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+        <a href="savings_account.html"><i class="fas fa-university"></i> Accounts</a>
+        <a href="personal_loan.html"><i class="fas fa-hand-holding-usd"></i> Loans</a>
+        <a href="fixed_deposit.html"><i class="fas fa-piggy-bank"></i> Deposits</a>
+        <a href="mutual_funds.html"><i class="fas fa-chart-line"></i> Investments</a>
+        <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Welcome to First Bank</h2>
+    <p>Building a world-class bank in India with ethics, technology, and social impact.</p>
+    <a href="https://www.idfcfirstbank.com/#" target="_blank" class="button">Visit IDFC First Bank</a>
+</div>
+
+<div class="cards">
+    <div class="card">
+        <h3>Savings Account</h3>
+        <p>ZERO charges on RTGS and NEFT transactions</p>
+        <a href="savings_account.html" class="button">Apply Now</a>
+    </div>
+    <div class="card">
+        <h3>Personal Loan</h3>
+        <p>Get instant loans up to ₹10 Lakhs in 30 minutes</p>
+        <a href="personal_loan.html" class="button">Know More</a>
+    </div>
+    <div class="card">
+        <h3>Fixed Deposits</h3>
+        <p>Earn up to 7.90% p.a.</p>
+        <a href="fixed_deposit.html" class="button">Book Now</a>
+    </div>
+    <div class="card">
+        <h3>Mutual Funds</h3>
+        <p>Invest in top funds curated by our experts</p>
+        <a href="mutual_funds.html" class="button">Know More</a>
+    </div>
+</div>
+
+</body>
+</html>
+

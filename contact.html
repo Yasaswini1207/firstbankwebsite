@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | First Bank</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome Icons -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bank-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 20px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #8f2d3a;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Highlight "Contact" as active */
+        .nav-links a.active {
+            background-color: #8f2d3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .nav-links a:hover {
+            background-color: #8f2d3a;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin: 40px auto;
+            color: black;
+        }
+
+        .container h2 {
+            color: #8f2d3a;
+        }
+
+        .contact-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button {
+            background-color: #8f2d3a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Bank Logo">
+    </div>
+    <nav class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="savings_account.html"><i class="fas fa-university"></i> Accounts</a>
+        <a href="personal_loan.html"><i class="fas fa-hand-holding-usd"></i> Loans</a>
+        <a href="fixed_deposit.html"><i class="fas fa-piggy-bank"></i> Deposits</a>
+        <a href="mutual_funds.html"><i class="fas fa-chart-line"></i> Investments</a>
+        <a href="contact.html" class="active"><i class="fas fa-phone-alt"></i> Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+        <p><strong>Email:</strong> support@firstbank.com</p>
+        <p><strong>Phone:</strong> 1800-123-456</p>
+        <p><strong>Address:</strong> 123 Bank Street, Mumbai, India</p>
+    </div>
+    
+    <h3>Send Us a Message</h3>
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" placeholder="Your message" required></textarea>
+        </div>
+        <button type="submit" class="button">Send Message</button>
+    </form>
+    
+    <h3>Visit Us</h3>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.758136711332!2d72.82131641500266!3d19.07609068709602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9023e12b4e3%3A0x8f2d3a8c02a5e87d!2sMumbai%20Stock%20Exchange!5e0!3m2!1sen!2sin!4v1647779287332!5m2!1sen!2sin" 
+        allowfullscreen="" loading="lazy">
+    </iframe>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you! Your message has been sent.');
+        document.getElementById('contactForm').reset();
+    });
+</script>
+
+</body>
+</html>
+
+
