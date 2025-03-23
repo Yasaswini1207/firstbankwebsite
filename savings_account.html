@@ -55,6 +55,42 @@
             border-radius: 30px;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #8f2d3a;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 10px 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links a {
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
         .container {
             width: 80%;
             margin: 40px auto;
@@ -128,32 +164,6 @@
             background-color: #721b29;
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .feature-box {
-                width: 100%;
-            }
-
-            .sticky-button {
-                position: fixed;
-                bottom: 15px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 80%;
-                text-align: center;
-                font-size: 18px;
-            }
-        }
-
     </style>
 </head>
 <body>
@@ -163,6 +173,7 @@
     <div class="logo">
         <img src="logo.png" alt="Bank Logo">
     </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <nav class="nav-links">
         <a href="index.html"><i class="fas fa-home"></i> Home</a>
         <a href="savings_account.html" class="active"><i class="fas fa-university"></i> Accounts</a>
@@ -202,9 +213,16 @@
     </div>
 
     <a href="https://www.idfcfirstbank.com/#" target="_blank" class="button">Apply Now</a>
-    <a href="https://www.idfcfirstbank.com/#" target="_blank" class="button sticky-button">Apply Now</a>
 </div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.nav-links');
+        menu.classList.toggle('show');
+    }
+</script>
 
 </body>
 </html>
+
 
